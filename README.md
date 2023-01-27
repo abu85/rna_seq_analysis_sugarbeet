@@ -137,6 +137,8 @@ nextflow
 --max_cpus 20 \
 --max_memory 128.GB \
 --project snic2022-22-816 \
--bg
+-bg > log_sug_beet_full_run_with_el10_2023_01_27.txt
 ```
+
+if you get error at anymoment while running the avobe command line please add ```-resume``` to the command line and run it again
 
