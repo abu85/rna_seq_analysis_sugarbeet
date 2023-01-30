@@ -1,0 +1,12 @@
+{
+    "input": "\/proj\/snic2021-23-442\/nobackup\/rna_seq\/nxf\/samplesheet_updated_nov2022.csv",
+    "outdir": "\/proj\/snic2021-23-442\/nobackup\/rna_seq\/nxf\/new_beet\/new_launch\/new_env_22_10_25\/results_el10_full_run",
+    "email": "abu.siddique@slu.se",
+    "multiqc_title": "EL10.1_sugar_beet_rna_seq",
+    "remove_ribo_rna": true,
+    "fasta": "\/proj\/snic2021-23-442\/nobackup\/rna_seq\/nxf\/beet\/Bmar-1.0.fna.gz",
+    "gff": "\/proj\/snic2021-23-442\/nobackup\/rna_seq\/nxf\/beet\/Bmar.unfiltered_genes.gff3",
+    "gencode": true,
+    "pseudo_aligner": "salmon",
+    "skip_alignment": true
+}
