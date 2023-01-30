@@ -7,9 +7,9 @@ dowloaded here:
 
 now transfer to the Uppmax:
 ```
-scp Bmar*.gz abusiddi@rackham.uppmax.uu.se:/proj/snic2022-23-479/nobackup/abusiddi/amf/nxf/beet
-scp Bmar*.gff3 abusiddi@rackham.uppmax.uu.se:/proj/snic2022-23-479/nobackup/abusiddi/amf/nxf/beet
-scp *.mrna abusiddi@rackham.uppmax.uu.se:/proj/snic2022-23-479/nobackup/abusiddi/amf/nxf/beet
+scp Bmar*.gz abusiddi@rackham.uppmax.uu.se:/proj/snic2021-23-442/nobackup/rna_seq/nxf/beet/
+scp Bmar*.gff3 abusiddi@rackham.uppmax.uu.se:/proj/snic2021-23-442/nobackup/rna_seq/nxf/beet/
+scp *.mrna abusiddi@rackham.uppmax.uu.se:/proj/snic2021-23-442/nobackup/rna_seq/nxf/beet/
 ```
 
 ### create and save afile name:
