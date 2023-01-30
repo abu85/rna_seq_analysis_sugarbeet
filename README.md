@@ -130,7 +130,8 @@ nextflow
 
 ### 5.1 main command line
 
-```nextflow run nf-core/rnaseq \
+```
+nextflow run nf-core/rnaseq \
 -r 3.10.1 -name sug_beet_full_run_with_el10_2023_01_27 \
 -profile uppmax \
 -params-file el10_nf-params.json \
