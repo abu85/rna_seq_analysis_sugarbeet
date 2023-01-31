@@ -1,1 +1,0 @@
-# rna_seq_analysis_sugarbeet
