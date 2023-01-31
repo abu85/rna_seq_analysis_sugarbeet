@@ -73,3 +73,17 @@ nextflow run nf-core/rnaseq \
 --project snic2022-22-816 \
 -bg > log_sea_beet_full_run_2023_01_30.txt
 ```
+
+updated script
+
+```
+nextflow run nf-core/rnaseq \
+-r 3.10.1 -name sea_beet_2023_01_30_resume1 \
+-profile uppmax \
+-params-file sea_beet_nf-params.json \
+--max_cpus 20 \
+--max_memory 128.GB \
+--project snic2022-22-816 \
+-bg -resume > log_sea_beet_full_run_2023_01_30.txt
+```
+
