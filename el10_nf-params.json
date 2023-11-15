@@ -1,0 +1,13 @@
+{
+    "input": "\/proj\/snic2021-23-442\/nobackup\/rna_seq\/nxf\/samplesheet_updated_nov2022.csv",
+    "outdir": "\/proj\/snic2021-23-442\/nobackup\/rna_seq\/nxf\/new_beet\/new_launch\/new_env_22_10_25\/results_el10_full_run",
+    "email": "abu.siddique@slu.se",
+    "multiqc_title": "EL10.1_sugar_beet_rna_seq",
+    "remove_ribo_rna": true,
+    "fasta": "\/proj\/snic2021-23-442\/nobackup\/rna_seq\/nxf\/beet\/transcript_making\/valentina_el10\/EL10.1_final_scaffolds.fasta",
+    "gff": "\/proj\/snic2021-23-442\/nobackup\/rna_seq\/nxf\/beet\/transcript_making\/valentina_el10\/EL10.1_final.gff",
+    "salmon_index": "\/proj\/snic2021-23-442\/nobackup\/rna_seq\/nxf\/new_beet\/new_launch\/new_env_22_10_25\/result_22_10_25_val\/genome\/index\/salmon",
+    "gencode": true,
+    "pseudo_aligner": "salmon",
+    "skip_alignment": true
+}
