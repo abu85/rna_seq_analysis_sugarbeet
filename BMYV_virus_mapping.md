@@ -75,7 +75,8 @@ nextflow run nf-core/viralrecon -r 2.6.0 -name virus_bmyv_map_final_run -profile
 ```
 see the log file after pipeline is done, get the mapping percentage
 
-
+Method: The sequenced reads were trimmed by applying fastp [#]. Data for each bmyv samples including replicates were subsequently mapped to the virus genome [EF107543.1](https://www.ncbi.nlm.nih.gov/nuccore/EF107543.1?report=fasta) using Bowtie 2 [#]. default set up was used for bowtie2.
+refrence: 2.3. [_Transcriptome Analysis section_](https://doi.org/10.3390/v12010076)
 
 
 
