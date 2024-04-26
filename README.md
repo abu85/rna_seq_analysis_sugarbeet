@@ -142,6 +142,17 @@ nextflow run nf-core/rnaseq \
 ```
 
 
+### 2024-04-25
+install bed tools, then seperate candidate genes from bed file `/mnt/c/Users/auue0001/OneDrive\ -\ Sveriges\ lantbruksuniversitet/slubi/proj/proj_anders_vinitha/extract/genome7El10.1_final.bed` and saved as can_bed.txt
+
+```
+cd /mnt/c/Users/auue0001/OneDrive\ -\ Sveriges\ lantbruksuniversitet/slubi/proj/proj_anders_vinitha/extract/
+
+bedtools getfasta -fi EL10.1_final_scaffolds.fasta -bed can_bed.txt -split -name | fold -w 60 > candidate_genes.fasta
+```
+
+downloaded genome folder used for salmon quantification here in `/mnt/c/Users/auue0001/OneDrive\ -\ Sveriges\ lantbruksuniversitet/slubi/proj/proj_anders_vinitha/extract/`
+
 ## 2024-04-26
 we need to extract raw reads from the samples for specific candidate genes. so we rerun but with star salmon.
 
