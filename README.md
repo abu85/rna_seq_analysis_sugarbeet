@@ -141,5 +141,28 @@ nextflow run nf-core/rnaseq \
 -bg > log_sug_beet_full_run_with_el10_2023_01_27.txt
 ```
 
+
+## 2024-04-26
+we need to extract raw reads from the samples for specific candidate genes. so we rerun but with star salmon.
+
+*changed project, add resume, new output, starsalmon, multiqc header, save allignment interm*
+```
+nextflow run nf-core/rnaseq \
+-r 3.10.1 -name sug_beet_full_run_with_el10_2024_04_26 \
+-profile uppmax \
+-params-file el10_nf-params.json \
+--max_cpus 20 \
+--max_memory 128.GB \
+--project naiss2023-22-1096 \
+-bg -resume \
+--skip_pseudo_alignment \
+--outdir "/proj/snic2021-23-442/nobackup/rna_seq/nxf/new_beet/new_launch/new_env_22_10_25/results_el10_full_run_star_salmon" \
+--multiqc_title "EL10.1_sugar_beet_rna_seq" \
+--skip_alignment false \
+--aligner "star_salmon" \
+--save_align_intermeds > log_sug_beet_full_run_with_el10_2024_04_26.txt
+```
+
+
 if you get error at anymoment while running the avobe command line please add ```-resume``` to the command line and run it again
 
