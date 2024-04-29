@@ -174,6 +174,43 @@ nextflow run nf-core/rnaseq \
 --save_align_intermeds > log_sug_beet_full_run_with_el10_2024_04_26.txt
 ```
 
+2024-04-29
+
+storage become full, so deleted work folder from `/proj/snic2021-23-442/nobackup/rna_seq/nxf/new_beet/new_launch/new_env_22_10_25/`
+re run
+
+ml bioinfo-tools Nextflow
+
+tmux new -s rna_seq_el10
+
+
+```
+export NXF_OPTS='-Xms1g -Xmx4g'
+
+export NXF_HOME=/proj/snic2021-23-442/nobackup/rna_seq/nxf/new_beet/new_launch/new_env_22_10_25
+
+export NXF_HOME=/proj/snic2021-23-442/nobackup/rna_seq/nxf/new_beet/new_launch/new_env_22_10_25/
+
+export NXF_TEMP=${SNIC_TMP:-$HOME/glob/nxftmp}
+```
+
+update:
+nextflow pull nf-core/rnaseq
+
+New run with bam_csi_index true and save_align_intermeds
+```
+nextflow run nf-core/rnaseq \
+-r 3.14.0 -name el10_full_star_salmon_2024_04_29 \
+-profile uppmax \
+-params-file el10_nf-params_v2.json \
+--max_cpus 20 \
+--max_memory 128.GB \
+--project naiss2023-22-1096 \
+--skip_pseudo_alignment \
+--aligner "star_salmon" \
+--save_align_intermeds \
+--bam_csi_index true > log_sug_beet_full_run_with_el10_2024_04_29.txt
+```
 
 if you get error at anymoment while running the avobe command line please add ```-resume``` to the command line and run it again
 
