@@ -35,3 +35,8 @@ nextflow run nf-core/rnaseq \
 --fasta "/proj/uppstore2018171/abu/vinitha_qtl/qtlseq_analysis/Phytozome/PhytozomeV13/Bvulgarisssp_vulgaris/EL10.2_2/assembly/Bvulgarisssp_vulgaris_782_EL10.2.fa.gz" \
 --gff "/proj/uppstore2018171/abu/vinitha_qtl/qtlseq_analysis/Phytozome/PhytozomeV13/Bvulgarisssp_vulgaris/EL10.2_2/annotation/Bvulgarisssp_vulgaris_782_EL10.2_2.gene.gff.gz" \
 --bam_csi_index true > log1_bmyv_o_21dpi_i.txt
+
+
+### run 2
+nextflow run nf-core/rnaseq -r 3.16.1 -profile uppmax -w work_21dpi -params-file el10_nf-params_star.json --max_cpus 20 --max_memory 128.GB --project naiss2023-22-1096 --skip_pseudo_alignment --aligner "star_salmon" --save_align_intermeds --fasta "/proj/uppstore2018171/abu/vinitha_qtl/qtlseq_analysis/Phytozome/PhytozomeV13/Bvulgarisssp_vulgaris/EL10.2_2/assembly/Bvulgarisssp_vulgaris_782_EL10.2.fa.gz" --gff "/proj/uppstore2018171/abu/vinitha_qtl/qtlseq_analysis/Phytozome/PhytozomeV13/Bvulgarisssp_vulgaris/EL10.2_2/annotation/Bvulgarisssp_vulgaris_782_EL10.2_2.gene.gff.gz" --bam_csi_index true -bg -resume > log2_bmyv_o_21dpi_i.txt
+
