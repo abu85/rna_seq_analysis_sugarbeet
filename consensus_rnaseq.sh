@@ -41,6 +41,9 @@ generate_consensus() {
 
     # Merge BAM files
     samtools merge -f $merged_bam "${bam_files[@]}"
+    
+    # Index the merged BAM file
+    samtools index $merged_bam
 
     # Generate a pileup and call variants
     samtools mpileup -uf $REFERENCE_GENOME -r $REGION $merged_bam | bcftools call -c - > $output_vcf
