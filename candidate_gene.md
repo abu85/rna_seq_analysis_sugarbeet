@@ -44,6 +44,7 @@ finished successfully!!
 
 # Concensus for both res and sus sample
 ## 2024-11-01
+working dir: /proj/snic2021-23-442/nobackup/rna_seq/nxf/new_beet/new_launch/new_env_22_10_25/results_el10_2_star_BMYV_O_21_DPI_I/consensus
 
 ```
 #!/bin/bash -l
@@ -104,4 +105,46 @@ generate_consensus 1 "${BAM_FILES_GROUP1[@]}"
 generate_consensus 2 "${BAM_FILES_GROUP2[@]}"
 ```
 
+# 2024-11-18
+Consensus making from genomic parents
 
+working dir: /proj/snic2021-23-442/nobackup/rna_seq/nxf/new_beet/new_launch/new_env_22_10_25/results_el10_2_star_BMYV_O_21_DPI_I/consensus/consensus_from_genomic_data
+
+```
+#!/bin/bash -l
+#SBATCH -A naiss2024-22-1110
+#SBATCH -M rackham
+#SBATCH -t 02-24:00:00
+#SBATCH -p core
+#SBATCH -n 2
+#SBATCH --job-name=cons_genomes_both_parents
+#SBATCH --output=cons_genomes_both_parents.out
+#SBATCH --error=cons_genomes_both_parents.err
+
+# Load necessary modules
+ml bioinfo-tools samtools/1.2 bcftools/1.20 seqtk/1.2-r101
+
+# Define variables
+REFERENCE_GENOME="/proj/snic2021-23-442/nobackup/rna_seq/nxf/new_beet/new_launch/new_env_22_10_25/results_el10_2_star_BMYV_O_21_DPI_I/genome/Bvulgarisssp_vulgaris_782_EL10.2.fa"
+REGION="EL10_2_Chr4:60350684-60355128"
+
+# Parent 1 BAM file
+BAM_FILE_PARENT1="/proj/snic2021-23-442/nobackup/rna_seq/nxf/new_beet/new_launch/new_env_22_10_25/results_el10_2_star_BMYV_O_21_DPI_I/consensus/qtlseq_analysis_run_5_updated_p1/20_bam/parent.bam"
+
+# Parent 2 BAM file
+BAM_FILE_PARENT2="/proj/snic2021-23-442/nobackup/rna_seq/nxf/new_beet/new_launch/new_env_22_10_25/results_el10_2_star_BMYV_O_21_DPI_I/consensus/qtlseq_analysis_run_5_updated_p2/20_bam/parent.bam"
+
+# Generate consensus for Parent 1
+samtools mpileup -uf $REFERENCE_GENOME -r $REGION $BAM_FILE_PARENT1 > parent1.mpileup
+bcftools call -c -Ov parent1.mpileup > parent1.vcf
+vcfutils.pl vcf2fq parent1.vcf > parent1.fq
+seqtk seq -A parent1.fq > parent1.consensus.from.genomic.data.fa
+
+# Generate consensus for Parent 2
+samtools mpileup -uf $REFERENCE_GENOME -r $REGION $BAM_FILE_PARENT2 > parent2.mpileup
+bcftools call -c -Ov parent2.mpileup > parent2.vcf
+vcfutils.pl vcf2fq parent2.vcf > parent2.fq
+seqtk seq -A parent2.fq > parent2.consensus.from.genomic.data.fa
+
+echo "All jobs are finished at: $(date)"
+```
